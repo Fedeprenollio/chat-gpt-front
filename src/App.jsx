@@ -26,7 +26,6 @@ function App () {
     }).then(res => res.json())
       .then(res => {
         if (res == null) return
-        console.log(res)
         setResult(res)
       }).catch(() => setResult('Intentalo nuevamente'))
 
@@ -100,10 +99,10 @@ function App () {
           type={'to'}/>
 
           <div className={style.buttons}>
-            <button onClick={handleClickCopy}>
+            <button className={style.icon} onClick={handleClickCopy}>
               <ClipboarIcon/>
             </button>
-            <button onClick={() => handleSeack('to')}>
+            <button className={style.icon} onClick={() => handleSeack('to')}>
               <SpeakerIcon/>
             </button>
           </div>

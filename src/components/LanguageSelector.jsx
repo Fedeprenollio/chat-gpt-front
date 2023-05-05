@@ -12,7 +12,6 @@ export const LANGUAGE_SUPPORT = {
 export const LanguageSelector = ({ onChange, value, type }) => {
   const handleSelect = (e) => {
     onChange(e.target.value)
-    console.log(e.target.value)
   }
   return (
     <div>
