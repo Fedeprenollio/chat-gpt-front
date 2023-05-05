@@ -13,7 +13,7 @@ function App () {
 
   useEffect(() => {
     if (debounceFromText === '') return
-    fetch('http://localhost:4000/', {
+    fetch('https://chat-gpt-back-production.up.railway.app/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
