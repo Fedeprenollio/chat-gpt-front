@@ -24,7 +24,9 @@ function reducer (state, action) {
       ...state,
       loading,
       fromLanguage: state.toLanguage,
-      toLanguage: state.fromLanguage
+      toLanguage: state.fromLanguage,
+      fromText: state.result,
+      result: state.fromText
     }
   }
 

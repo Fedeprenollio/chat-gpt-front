@@ -10,15 +10,41 @@
   display: flex;
   width: 100%;
   justify-content: center;
-  align-items: center;
+  align-items: start;
+  
 }
 
 .title{
   text-align: center;
 }
 
+.arrow{
+  padding-top: 0;
+}
+
 .to{
   position: relative;
+}
+.from{
+  position: relative;
+}
+
+
+.delete{
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: inherit;
+}
+.delete span{
+  background-color: inherit;
+  opacity: 0.6;
+  padding: 10px;
+}
+
+.delete span:hover{
+  background-color: inherit;
+  opacity: 1;
 }
 
 .buttons{

@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import style from './App.module.css'
-import { ArrowsIcon, ClipboarIcon, SpeakerIcon } from './components/Icons'
+import { ArrowsIcon, ClipboarIcon, DeleteIcon, SpeakerIcon } from './components/Icons'
 import { LanguageSelector } from './components/LanguageSelector'
 import { TextArea } from './components/TextArea'
 import { useDebounce } from './hooks/useDebounce'
@@ -59,14 +59,18 @@ function App () {
       synth.speak(newSpeack)
     }
   }
+  const handleDeleteText = () => {
+    setFromText('')
+    setResult('')
+  }
 
   return (
     <div>
-     <h1 className={style.title}>Google translater</h1>
+     <h1 className={style.title}>Google translator</h1>
       <div className={style.container}>
         <div >
-            <h2>From</h2>
             <LanguageSelector type="from" value={fromLanguage} onChange={setFromLanguage}/>
+            <div style={{ position: 'relative' }}>
               <TextArea
               loading={loading}
               value={fromText}
@@ -75,20 +79,23 @@ function App () {
               autoFocus={true}
               type="from"/>
 
-          <div className={style.buttons}>
+          {fromText &&
+              <div className={style.delete}>
+                <span onClick={handleDeleteText}>
+                  <DeleteIcon/>
+                </span>
+               </div>}
 
-          </div>
-
+            </div>
         </div>
 
         <div>
-          <button disabled={fromLanguage === 'auto'} onClick={interchangeLanguage}>
+          <button className={style.arrow} disabled={fromLanguage === 'auto'} onClick={interchangeLanguage}>
               <ArrowsIcon/>
           </button>
         </div>
 
         <div className={style.to}>
-          <h2>To</h2>
           <LanguageSelector type="to" value={toLanguage} onChange={setToLanguage}/>
           <TextArea
           loading={loading}
@@ -98,14 +105,18 @@ function App () {
           autoFocus={false}
           type={'to'}/>
 
-          <div className={style.buttons}>
-            <button className={style.icon} onClick={handleClickCopy}>
-              <ClipboarIcon/>
-            </button>
-            <button className={style.icon} onClick={() => handleSeack('to')}>
-              <SpeakerIcon/>
-            </button>
-          </div>
+            {
+              result &&
+                <div className={style.buttons}>
+                  <button className={style.icon} onClick={handleClickCopy}>
+                    <ClipboarIcon/>
+                  </button>
+                  <button className={style.icon} onClick={() => handleSeack('to')}>
+                    <SpeakerIcon/>
+                  </button>
+                </div>
+            }
+
         </div>
 
       </div>

@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
+import style from './LanguageSelector.module.css'
 
 export const LANGUAGE_SUPPORT = {
   esp: 'Español',
@@ -16,7 +17,7 @@ export const LanguageSelector = ({ onChange, value, type }) => {
   return (
     <div>
             {/* <label >Selecciona un idioma</label> */}
-            <select action="" onChange={handleSelect} value={value}>
+            <select className={style.select} action="" onChange={handleSelect} value={value}>
             { type === 'from' && <option key={'auto'} value={'auto'}>Auto Detectar</option>}
             {Object.entries(LANGUAGE_SUPPORT).map(([key, literal]) => {
               return (
