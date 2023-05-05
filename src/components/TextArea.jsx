@@ -2,7 +2,7 @@
 import React from 'react'
 
 export const TextArea = ({ loading, autoFocus, placeholder, value, onChange, type }) => {
-  const commonStyles = { border: '0', height: '200px', resize: 'none' }
+  const commonStyles = { border: '0', height: '200px', resize: 'none', color: 'black' }
   const styles = (type === 'from')
     ? { ...commonStyles, backgroundColor: '#f5f5f5' }
 
