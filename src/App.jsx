@@ -65,7 +65,7 @@ function App () {
   }
 
   return (
-    <div>
+    <div style={{ overflowX: 'scroll' }}>
      <h1 className={style.title}>Google translator</h1>
       <div className={style.container}>
         <div >
