@@ -1,7 +1,7 @@
 
   
   #root {
-  /* max-width: 800px; */
+  max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
 }
@@ -27,9 +27,11 @@
 
 .to{
   position: relative;
+  max-width: 500px;
 }
 .from{
-  position: relative;
+  max-width: 500px;
+
 }
 
 
@@ -61,4 +63,18 @@
   
   opacity: 0.7;
 
+}
+
+
+@media (max-width: 800px) {
+  .container{
+    flex-direction: column;
+   max-width: 500px;
+   align-content: center;
+   align-items: center;
+   margin: auto;
+  }
+  .to, .from{
+    max-width: 100%;
+  }
 }

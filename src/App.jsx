@@ -65,10 +65,10 @@ function App () {
   }
 
   return (
-    <div style={{ overflowX: 'scroll' }}>
+    <div style={{ width: '100%' }}>
      <h1 className={style.title}>Google translator</h1>
       <div className={style.container}>
-        <div >
+        <div className={style.from} >
             <LanguageSelector type="from" value={fromLanguage} onChange={setFromLanguage}/>
             <div style={{ position: 'relative' }}>
               <TextArea
